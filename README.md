@@ -1,2 +1,2 @@
 # htmx-reset
-A simple plugin for automatically resetting forms after a submitted request
+A simple HTMX plugin adding extensions for automatically resetting forms after a submitted request
