@@ -3,12 +3,19 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
+/*
+Source: http://www.github.com/GandelXIV/htmx-reset
+*/
 
 console.log("Loaded htmx-reset extension");
 
 function resetEventTrigger(event) {
-      const element = event.detail.requestConfig.elt;
-      element.reset();
+  const element = event.detail.requestConfig.elt;
+  switch (element.tagName) {
+    case 'FORM':
+        element.reset();
+        break;
+  }
 }
 
 htmx.defineExtension("reset-always", {

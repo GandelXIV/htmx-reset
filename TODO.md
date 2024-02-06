@@ -1,6 +1,4 @@
 # Todo
-- reset-success
-- reset-failure
 - reset-value
 - resetting other than forms (inputs, selects)
 - testing & examples ^
