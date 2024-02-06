@@ -4,7 +4,7 @@ Included extensions:
 - `reset-always`
 - `reset-success`
 - `reset-failure`
-<br>
+
 ## Installation 
 1. Download a copy of `reset.js` somewhere into your project
 2. Include it into your HTML <br> `<script src="/path/to/reset.js"></script>`
