@@ -19,4 +19,19 @@ htmx.defineExtension("reset-always", {
   }
 });
 
-// TODO: implement reset-success reset-failure ...
+htmx.defineExtension("reset-success", {
+  onEvent: function(name, event) {
+    if (name == "htmx:afterRequest" && event.detail.successful) {
+      resetEventTrigger(event);
+    }
+  }
+})
+
+
+htmx.defineExtension("reset-failure", {
+  onEvent: function(name, event) {
+    if (name == "htmx:afterRequest" && !event.detail.successful) {
+      resetEventTrigger(event);
+    }
+  }
+})
