@@ -7,4 +7,5 @@ Included extensions:
 
 ## Installation 
 1. Download a copy of `reset.js` somewhere into your project
-2. Include it into your HTML <br> `<script src="/path/to/reset.js"></script>`
+2. Include it into your HTML `<script src="/path/to/reset.js"></script>`
+3. Add it to your elements `<form hx-post="/somewhere" hx-ext="reset-success"> ...`
