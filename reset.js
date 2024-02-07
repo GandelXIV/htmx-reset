@@ -9,6 +9,8 @@ Source: http://www.github.com/GandelXIV/htmx-reset
 
 console.log("Loaded htmx-reset extension");
 
+const HTMX_AFTER_EVENT = "htmx:afterRequest";
+
 function resetEventTrigger(event) {
   const element = event.detail.requestConfig.elt;
   switch (element.tagName) {
@@ -20,7 +22,7 @@ function resetEventTrigger(event) {
 
 htmx.defineExtension("reset-always", {
   onEvent: function(name, event) {
-    if (name == "htmx:afterRequest") {
+    if (name == HTMX_AFTER_EVENT) {
       resetEventTrigger(event);
     }
   }
@@ -28,7 +30,7 @@ htmx.defineExtension("reset-always", {
 
 htmx.defineExtension("reset-success", {
   onEvent: function(name, event) {
-    if (name == "htmx:afterRequest" && event.detail.successful) {
+    if (name == HTMX_AFTER_EVENT && event.detail.successful) {
       resetEventTrigger(event);
     }
   }
@@ -37,7 +39,7 @@ htmx.defineExtension("reset-success", {
 
 htmx.defineExtension("reset-failure", {
   onEvent: function(name, event) {
-    if (name == "htmx:afterRequest" && !event.detail.successful) {
+    if (name == HTMX_AFTER_EVENT && !event.detail.successful) {
       resetEventTrigger(event);
     }
   }
